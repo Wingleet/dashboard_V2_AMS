@@ -1,0 +1,54 @@
+# Security Headers for all pages
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# HTML - No cache
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  Content-Type: text/html; charset=utf-8
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Content-Type: text/html; charset=utf-8
+
+# JavaScript assets - Long cache with immutable
+/assets/*.js
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS assets - Long cache with immutable
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# All assets - Long cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - Long cache
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Content-Type: image/avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Content-Type: image/webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Content-Type: image/svg+xml; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=31536000, immutable

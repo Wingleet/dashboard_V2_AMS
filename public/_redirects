@@ -1,0 +1,5 @@
+# API Proxy to AMS Backend
+/api/*  https://46.105.115.223:8181/:splat  200
+
+# SPA Fallback - All routes to index.html
+/*  /index.html  200
