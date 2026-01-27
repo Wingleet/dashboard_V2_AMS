@@ -10,7 +10,7 @@
  * 5. Handle errors
  */
 
-import ams, {
+import {
   initAmsApi,
   loadWpDashboard,
   preloadWpList,

@@ -4,7 +4,6 @@
  */
 
 import { fetchReferentials, GenericRef } from './amsEndpoints';
-import { get, set, CACHE_TTL } from './amsCache';
 
 // ============================================================================
 // REFERENTIAL CACHE

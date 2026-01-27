@@ -4,7 +4,7 @@
  */
 
 import { configureClient, AmsApiError } from './amsClient';
-import { bootstrapReferentials, waitForBootstrap } from './amsBootstrap';
+import { bootstrapReferentials } from './amsBootstrap';
 import { clearAll as clearCache, invalidatePrefix } from './amsCache';
 import {
   amsApi,
