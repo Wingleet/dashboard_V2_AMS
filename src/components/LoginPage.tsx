@@ -82,7 +82,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
               className="w-full h-full object-contain"
             />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">iKanban PR</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">iDashboard v2</h1>
           <p className="text-blue-200">Connectez-vous pour accéder à l'application</p>
         </div>
 
