@@ -183,20 +183,14 @@ export function getApiSettings(): {
 }
 
 /**
- * Helper function to make API requests directly to AMS API
+ * Helper function to make API requests via proxy
+ * In both dev and production, use /api prefix which is proxied to the AMS backend
  */
 export async function makeApiRequest(path: string, method: string = 'GET', headers: Record<string, string> = {}, signal?: AbortSignal): Promise<Response> {
-  const isDev = import.meta.env.DEV;
+  // Always use /api prefix - Vite dev server and Netlify both proxy this to the AMS backend
+  const fullUrl = `/api${path}`;
   
-  const amsBaseUrl = import.meta.env.VITE_AMS_BASE_URL || getApiSettings()?.url || 'http://46.105.115.223:8181';
-  
-  const baseUrl = amsBaseUrl.startsWith('http') ? amsBaseUrl : `http://${amsBaseUrl}`;
-  
-  const fullUrl = isDev 
-    ? `/api${path}`
-    : `${baseUrl}${path}`;
-  
-  console.log('Making API request:', { path, method, isDev, fullUrl });
+  console.log('Making API request:', { path, method, fullUrl });
   
   const timeoutSignal = signal || AbortSignal.timeout(30000);
   
